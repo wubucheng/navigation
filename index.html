@@ -51,6 +51,19 @@
     function webopen(url, get) {
         window.open(url + '?' + get + '=' + $("#opentext").val());
     }
+
+
+    $(function () {
+        $('#opentext').bind('keypress', function (event) {
+            if (event.keyCode == "13") {
+                event.preventDefault();
+                //回车执行查询
+                window.open('http://www.google.com/search?q' + '=' + $("#opentext").val());
+            }
+        });
+
+    });
+
 </script>
 
 <body class="page-body">
@@ -155,6 +168,13 @@
                         </ul>
                     </li>
 
+                    <li>
+                        <a href="https://github.com/wubucheng/navigation/issues" target="_blank">
+                            <i class="linecons-food"></i>
+                            <span class="title">提交收录意见给我</span>
+                        </a>
+                    </li>
+
 
                     <!-- <div class="submit-tag">
                         <a href="about.html">
@@ -194,12 +214,10 @@
 
             <div class="search fr">
                 <form target="_blank" name="submitform2">
-                    <input type="text" id="opentext" name="word" autocomplete="off"  placeholder="请输入搜索内容"/>
-                    <input  class="google" value="Google"
-                        onclick="webopen('http://www.google.com/search','q')" data-toggle="tooltip"
-                        data-placement="bottom" href="javascript:void(0)" />
-                    <input  class="baidu" value="百度"
-                        onclick="webopen('https://www.baidu.com/s','wd')">
+                    <input type="text" id="opentext" name="word" autocomplete="off" placeholder="请输入搜索内容" />
+                    <input class="google" value="Google" onclick="webopen('http://www.google.com/search','q')"
+                        data-toggle="tooltip" data-placement="bottom" href="javascript:void(0)" />
+                    <input class="baidu" value="百度" onclick="webopen('https://www.baidu.com/s','wd')">
                 </form>
             </div>
 
@@ -316,7 +334,7 @@
                 </div>
                 <div class="col-sm-3">
                     <div class="xe-widget xe-conversations box2 label-info"
-                    onclick="window.open('https://mijisou.com/', '_blank')" data-toggle="tooltip"
+                        onclick="window.open('https://mijisou.com/', '_blank')" data-toggle="tooltip"
                         data-placement="bottom" title="" data-original-title="https://mijisou.com/">
                         <div class="xe-comment-entry">
                             <a class="xe-user-img">
@@ -333,7 +351,7 @@
                 </div>
                 <div class="col-sm-3">
                     <div class="xe-widget xe-conversations box2 label-info"
-                    onclick="window.open('https://lookao.com/', '_blank')" data-toggle="tooltip"
+                        onclick="window.open('https://lookao.com/', '_blank')" data-toggle="tooltip"
                         data-placement="bottom" title="" data-original-title="https://lookao.com/">
                         <div class="xe-comment-entry">
                             <a class="xe-user-img">
@@ -575,8 +593,7 @@
                         data-placement="bottom" title="" data-original-title="https://bitbucket.org/">
                         <div class="xe-comment-entry">
                             <a class="xe-user-img">
-                                <img data-src="assets/images/logos/bitbucket.png" class="lozad img-circle"
-                                    width="40">
+                                <img data-src="assets/images/logos/bitbucket.png" class="lozad img-circle" width="40">
                             </a>
                             <div class="xe-comment">
                                 <a href="#" class="xe-user-name overflowClip_1">
@@ -593,8 +610,7 @@
                         data-placement="bottom" title="" data-original-title="https://sourceforge.net/">
                         <div class="xe-comment-entry">
                             <a class="xe-user-img">
-                                <img data-src="assets/images/logos/sourceforge.png" class="lozad img-circle"
-                                    width="40">
+                                <img data-src="assets/images/logos/sourceforge.png" class="lozad img-circle" width="40">
                             </a>
                             <div class="xe-comment">
                                 <a href="#" class="xe-user-name overflowClip_1">
@@ -726,8 +742,7 @@
                         data-placement="bottom" title="" data-original-title="https://www.digitaling.com/">
                         <div class="xe-comment-entry">
                             <a class="xe-user-img">
-                                <img data-src="assets/images/logos/digitaling.png" class="lozad img-circle"
-                                    width="40">
+                                <img data-src="assets/images/logos/digitaling.png" class="lozad img-circle" width="40">
                             </a>
                             <div class="xe-comment">
                                 <a href="#" class="xe-user-name overflowClip_1">
@@ -744,8 +759,7 @@
                         data-placement="bottom" title="" data-original-title="http://www.lieyunwang.com/">
                         <div class="xe-comment-entry">
                             <a class="xe-user-img">
-                                <img data-src="assets/images/logos/lieyunwang.png" class="lozad img-circle"
-                                    width="40">
+                                <img data-src="assets/images/logos/lieyunwang.png" class="lozad img-circle" width="40">
                             </a>
                             <div class="xe-comment">
                                 <a href="#" class="xe-user-name overflowClip_1">
@@ -798,8 +812,7 @@
                         data-placement="bottom" title="" data-original-title="http://www.chanpin100.com/">
                         <div class="xe-comment-entry">
                             <a class="xe-user-img">
-                                <img data-src="assets/images/logos/chanpin100.png" class="lozad img-circle"
-                                    width="40">
+                                <img data-src="assets/images/logos/chanpin100.png" class="lozad img-circle" width="40">
                             </a>
                             <div class="xe-comment">
                                 <a href="#" class="xe-user-name overflowClip_1">
@@ -852,8 +865,7 @@
                         data-placement="bottom" title="" data-original-title="http://www.niaogebiji.com/">
                         <div class="xe-comment-entry">
                             <a class="xe-user-img">
-                                <img data-src="assets/images/logos/niaogebiji.png" class="lozad img-circle"
-                                    width="40">
+                                <img data-src="assets/images/logos/niaogebiji.png" class="lozad img-circle" width="40">
                             </a>
                             <div class="xe-comment">
                                 <a href="#" class="xe-user-name overflowClip_1">
@@ -910,8 +922,7 @@
                         data-placement="bottom" title="" data-original-title="https://www.producthunt.com/">
                         <div class="xe-comment-entry">
                             <a class="xe-user-img">
-                                <img data-src="assets/images/logos/producthunt.png" class="lozad img-circle"
-                                    width="40">
+                                <img data-src="assets/images/logos/producthunt.png" class="lozad img-circle" width="40">
                             </a>
                             <span class="label label-info" data-toggle="tooltip" data-placement="left" title=""
                                 data-original-title="Hello I am a Tooltip"></span>
@@ -1207,8 +1218,7 @@
                         data-placement="bottom" title="" data-original-title="https://www.pinterest.com/">
                         <div class="xe-comment-entry">
                             <a class="xe-user-img">
-                                <img data-src="assets/images/logos/pinterest.png" class="lozad img-circle"
-                                    width="40">
+                                <img data-src="assets/images/logos/pinterest.png" class="lozad img-circle" width="40">
                             </a>
                             <span class="label label-info" data-toggle="tooltip" data-placement="left" title=""
                                 data-original-title="Hello I am a Tooltip"></span>
@@ -1285,8 +1295,7 @@
                         data-placement="bottom" title="" data-original-title="https://wallhalla.com/">
                         <div class="xe-comment-entry">
                             <a class="xe-user-img">
-                                <img data-src="assets/images/logos/wallhalla.png" class="lozad img-circle"
-                                    width="40">
+                                <img data-src="assets/images/logos/wallhalla.png" class="lozad img-circle" width="40">
                             </a>
                             <div class="xe-comment">
                                 <a href="#" class="xe-user-name overflowClip_1">
@@ -1322,8 +1331,7 @@
                         data-placement="bottom" title="" data-original-title="https://medialoot.com/">
                         <div class="xe-comment-entry">
                             <a class="xe-user-img">
-                                <img data-src="assets/images/logos/Medialoot.png" class="lozad img-circle"
-                                    width="40">
+                                <img data-src="assets/images/logos/Medialoot.png" class="lozad img-circle" width="40">
                             </a>
                             <div class="xe-comment">
                                 <a href="#" class="xe-user-name overflowClip_1">
@@ -1429,8 +1437,7 @@
                         data-placement="bottom" title="" data-original-title="http://www.lanrentuku.com/">
                         <div class="xe-comment-entry">
                             <a class="xe-user-img">
-                                <img data-src="assets/images/logos/lanrentuku.png" class="lozad img-circle"
-                                    width="40">
+                                <img data-src="assets/images/logos/lanrentuku.png" class="lozad img-circle" width="40">
                             </a>
                             <div class="xe-comment">
                                 <a href="#" class="xe-user-name overflowClip_1">
@@ -1506,8 +1513,7 @@
                         data-placement="bottom" title="" data-original-title="https://freebiesbug.com/">
                         <div class="xe-comment-entry">
                             <a class="xe-user-img">
-                                <img data-src="assets/images/logos/freebiesbug.png" class="lozad img-circle"
-                                    width="40">
+                                <img data-src="assets/images/logos/freebiesbug.png" class="lozad img-circle" width="40">
                             </a>
                             <div class="xe-comment">
                                 <a href="#" class="xe-user-name overflowClip_1">
@@ -1560,8 +1566,7 @@
                         data-placement="bottom" title="" data-original-title="https://designmodo.com/">
                         <div class="xe-comment-entry">
                             <a class="xe-user-img">
-                                <img data-src="assets/images/logos/Designmodo.png" class="lozad img-circle"
-                                    width="40">
+                                <img data-src="assets/images/logos/Designmodo.png" class="lozad img-circle" width="40">
                             </a>
                             <div class="xe-comment">
                                 <a href="#" class="xe-user-name overflowClip_1">
@@ -1699,8 +1704,7 @@
                         data-placement="bottom" title="" data-original-title="https://sketchapp.com/">
                         <div class="xe-comment-entry">
                             <a class="xe-user-img">
-                                <img data-src="assets/images/logos/sketchapp.png" class="lozad img-circle"
-                                    width="40">
+                                <img data-src="assets/images/logos/sketchapp.png" class="lozad img-circle" width="40">
                             </a>
                             <div class="xe-comment">
                                 <a href="#" class="xe-user-name overflowClip_1">
@@ -1717,8 +1721,7 @@
                         data-placement="bottom" title="" data-original-title="http://www.adobe.com/products/xd.html">
                         <div class="xe-comment-entry">
                             <a class="xe-user-img">
-                                <img data-src="assets/images/logos/ADOBEXDCC.png" class="lozad img-circle"
-                                    width="40">
+                                <img data-src="assets/images/logos/ADOBEXDCC.png" class="lozad img-circle" width="40">
                             </a>
                             <div class="xe-comment">
                                 <a href="#" class="xe-user-name overflowClip_1">
@@ -1735,8 +1738,7 @@
                         data-placement="bottom" title="" data-original-title="https://www.invisionapp.com/">
                         <div class="xe-comment-entry">
                             <a class="xe-user-img">
-                                <img data-src="assets/images/logos/invisionapp.png" class="lozad img-circle"
-                                    width="40">
+                                <img data-src="assets/images/logos/invisionapp.png" class="lozad img-circle" width="40">
                             </a>
                             <div class="xe-comment">
                                 <a href="#" class="xe-user-name overflowClip_1">
@@ -1753,8 +1755,7 @@
                         data-placement="bottom" title="" data-original-title="https://marvelapp.com/">
                         <div class="xe-comment-entry">
                             <a class="xe-user-img">
-                                <img data-src="assets/images/logos/marvelapp.png" class="lozad img-circle"
-                                    width="40">
+                                <img data-src="assets/images/logos/marvelapp.png" class="lozad img-circle" width="40">
                             </a>
                             <div class="xe-comment">
                                 <a href="#" class="xe-user-name overflowClip_1">
@@ -1893,8 +1894,7 @@
                         data-placement="bottom" title="" data-original-title="http://screensiz.es/">
                         <div class="xe-comment-entry">
                             <a class="xe-user-img">
-                                <img data-src="assets/images/logos/screensizes.png" class="lozad img-circle"
-                                    width="40">
+                                <img data-src="assets/images/logos/screensizes.png" class="lozad img-circle" width="40">
                             </a>
                             <div class="xe-comment">
                                 <a href="#" class="xe-user-name overflowClip_1">
